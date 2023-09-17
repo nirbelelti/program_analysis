@@ -3,14 +3,12 @@ import json
 from graphviz import Digraph
 
 
-def create_uml_from_json(data_list):
+def create_uml_from_json(data_dict):
     # Create a new Digraph
     dot = Digraph('UML Diagram', format='png')
 
-    for data in data_list:
-        # Extract class details
-        class_name = data["name"]
-
+    # Iterate over each class in the dictionary
+    for class_name, data in data_dict.items():
         # Build a label for the class with its attributes and methods
         label = class_name + "|"
 
@@ -33,7 +31,7 @@ def create_uml_from_json(data_list):
         if "relations" in data:
             for relation in data["relations"]:
                 if relation["type"] == "inheritance":
-                    dot.edge(relation["target"], class_name)
+                    dot.edge(class_name, relation["target"])
 
     # Set the output file name and render the diagram
     output_file = 'uml_diagram'
@@ -43,6 +41,6 @@ def create_uml_from_json(data_list):
 
 if __name__ == '__main__':
     with open('car2.json', 'r') as f:
-        data_list = json.load(f)
+        data_dict = json.load(f)
 
-    create_uml_from_json(data_list)
+    create_uml_from_json(data_dict)

@@ -1,5 +1,5 @@
 digraph "UML Diagram" {
 	Person [label="Person|- name : String\l- age : int\l|+ getName() : String\l+ getAge() : int\l" shape=record]
-	Employee -> Person
+	Person -> Employee
 	Employee [label="Employee|- salary : double\l- position : String\l|+ getSalary() : double\l+ getPosition() : String\l" shape=record]
 }

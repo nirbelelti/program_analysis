@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Person",
+        "attributes": [
+            {"name": "name", "type": "String", "access": "private"},
+            {"name": "age", "type": "int", "access": "private"}
+        ],
+        "methods": [
+            {
+                "name": "getName",
+                "returnType": "String",
+                "access": "public",
+                "params": []
+            },
+            {
+                "name": "getAge",
+                "returnType": "int",
+                "access": "public",
+                "params": []
+            }
+        ],
+        "relations": [
+            {"type": "inheritance", "target": "Employee"}
+        ]
+    },
+    {
+        "name": "Employee",
+        "attributes": [
+            {"name": "salary", "type": "double", "access": "private"},
+            {"name": "position", "type": "String", "access": "private"}
+        ],
+        "methods": [
+            {
+                "name": "getSalary",
+                "returnType": "double",
+                "access": "public",
+                "params": []
+            },
+            {
+                "name": "getPosition",
+                "returnType": "String",
+                "access": "public",
+                "params": []
+            }
+        ]
+    }
+]

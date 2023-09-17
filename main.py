@@ -1,12 +1,14 @@
 import json
+
 from graphviz import Digraph
 
 json_data = open('car.json')
+
+
 def create_uml_from_json(json_data):
 
-
     data = json.loads(json_data)
-    print("data"+ str(data))
+    print("data" + str(data))
 
     # Create a new Digraph
     dot = Digraph('UML Diagram', format='png')
@@ -24,6 +26,7 @@ def create_uml_from_json(json_data):
     # Set the output file name and render the diagram
     output_file = 'uml_diagram'
     dot.render(output_file, format='png')
+
 
 if __name__ == '__main__':
     # JSON data representing Java code metadata

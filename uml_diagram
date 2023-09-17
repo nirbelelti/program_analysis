@@ -1,0 +1,7 @@
+digraph "UML Diagram" {
+	Main [label=Main]
+	Main -> n
+	Main -> i
+	Main -> a
+	Main -> a
+}

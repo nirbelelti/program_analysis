@@ -6,9 +6,9 @@ def interpret_function(data_dict):
     for method in methods:
         # if (method == "noop" or method == "hundredAndTwo" or method == "<init>" or method == "zero"
         #         or method =="identity" or method=="add" or method == 'min' or method =="factorial"):  # At the moment we are limiting the methods to supported ones only
-            print('Method:', method )
-            data_stack = create_stack(method, data_dict)
-            interpret_instruction(data_stack)
+        print('Method:', method)
+        data_stack = create_stack(method, data_dict)
+        interpret_instruction(data_stack)
 
 
 def list_of_methods(
@@ -36,13 +36,13 @@ def interpret_instruction(stack):  # covarage
         opr = instruction['opr']
         offset = instruction['offset']
 
-        if opr == 'return': #noop
+        if opr == 'return':  # noop
             print(f'Interpreting return instruction at offset {offset}')
             # Perform the return operation based on the context of your program
             # In this example, we'll print a message to indicate the return operation
             print('Returning from the current method')
 
-        elif opr  == 'push':  #code
+        elif opr == 'push':  # code
             value = instruction['value']
             value_type = value['type']
             if value_type == 'integer':
@@ -52,7 +52,7 @@ def interpret_instruction(stack):  # covarage
                 print(f'Interpreting push instruction at offset {offset}')
                 print(f'Unsupported value type: {value_type}')
 
-        elif opr == 'load': #<init>
+        elif opr == 'load':  # <init>
             print(f'Interpreting load instruction at offset {offset}')
             index = instruction['index']
             print(f'Loading reference from index: {index}')
@@ -62,7 +62,7 @@ def interpret_instruction(stack):  # covarage
             index = instruction['index']
             print(f'Storing value to index: {index}')
 
-        elif opr == 'invoke':  #<init>
+        elif opr == 'invoke':  # <init>
             print(f'Interpreting invoke instruction at offset {offset}')
             method = instruction['method']
             method_name = method['name']

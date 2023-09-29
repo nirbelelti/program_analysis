@@ -1,0 +1,70 @@
+[
+  {
+    "opr": "get",
+    "static": true,
+    "field": {
+      "class": "dtu/compute/exec/Simple",
+      "name": "$assertionsDisabled",
+      "type": "boolean"
+    }
+  },
+  {
+    "opr": "ifz",
+    "condition": "ne",
+    "target": 8
+  },
+  {
+    "opr": "load",
+    "type": "int",
+    "index": 1
+  },
+  {
+    "opr": "ifz",
+    "condition": "ne",
+    "target": 8
+  },
+  {
+    "opr": "new",
+    "class": "java/lang/AssertionError"
+  },
+  {
+    "opr": "dup",
+    "words": 1
+  },
+  {
+    "opr": "invoke",
+    "access": "special",
+    "method": {
+      "is_interface": false,
+      "ref": {
+        "kind": "class",
+        "name": "java/lang/AssertionError"
+      },
+      "name": "<init>",
+      "args": [],
+      "returns": null
+    }
+  },
+  {
+    "opr": "throw"
+  },
+  {
+    "opr": "load",
+    "type": "int",
+    "index": 0
+  },
+  {
+    "opr": "load",
+    "type": "int",
+    "index": 1
+  },
+  {
+    "opr": "binary",
+    "type": "int",
+    "operant": "div"
+  },
+  {
+    "opr": "return",
+    "type": "int"
+  }
+]

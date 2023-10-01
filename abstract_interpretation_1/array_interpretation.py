@@ -1,8 +1,9 @@
 class JavaStaticInterpreter:
     def __init__(self):
-        self.array_length = None
+        self.stack = []
         self.index = None
-        self.loaded_ref = False  # Initialize loaded_ref to False
+        self.loaded_ref = False # Initialize loaded_ref to False
+
 
     def interpret(self, bytecode):
         for instruction in bytecode:

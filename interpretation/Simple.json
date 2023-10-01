@@ -1,0 +1,75 @@
+{
+  "name": "div",
+  "access": ["public", "static"],
+  "typeparams": [],
+  "params": [
+      {
+          "visible": true,
+          "type": {
+              "base": "int",
+              "annotations": []
+          },
+          "annotations": []
+      },
+      {
+          "visible": true,
+          "type": {
+              "base": "int",
+              "annotations": []
+          },
+          "annotations": []
+      }
+  ],
+  "returns": {
+      "type": {
+          "base": "int"
+      },
+      "annotations": []
+  },
+  "code": {
+      "max_stack": 2,
+      "max_locals": 2,
+      "exceptions": [],
+      "stack_map": null,
+      "bytecode": [
+          {
+              "offset": 0,
+              "opr": "load",
+              "type": "int",
+              "index": 1
+          },
+          {
+              "offset": 1,
+              "opr": "ifz",
+              "condition": "eq",
+              "target": 7
+          },
+          {
+              "offset": 4,
+              "opr": "load",
+              "type": "int",
+              "index": 0
+          },
+          {
+              "offset": 5,
+              "opr": "load",
+              "type": "int",
+              "index": 1
+          },
+          {
+              "offset": 6,
+              "opr": "binary",
+              "type": "int",
+              "operant": "div"
+          },
+          {
+              "offset": 7,
+              "opr": "return",
+              "type": "int"
+          }
+      ]
+  },
+  "annotations": [],
+  "exceptions": [],
+  "default": null
+}

@@ -2,6 +2,7 @@ class JavaStaticInterpreter:
     def __init__(self):
         self.array_length = None
         self.index = None
+        self.loaded_ref = False  # Initialize loaded_ref to False
 
     def interpret(self, bytecode):
         for instruction in bytecode:
@@ -39,6 +40,7 @@ class JavaStaticInterpreter:
             elif opr == 'if' and instruction['condition'] == 'gt':
                 target = instruction['target']
                 print(f'Offset {offset}: Branching condition (greater than). Target offset: {target}')
+
             elif opr == 'invoke':
                 if self.loaded_ref:
                     print(f'Offset {offset}: Method invocation using a loaded reference.')
@@ -55,7 +57,6 @@ class JavaStaticInterpreter:
 
 # Example bytecode for the array indexing
 bytecode = [
-
     {
         "offset": 0,
         "opr": "load",
@@ -64,24 +65,26 @@ bytecode = [
     },
     {
         "offset": 1,
-        "opr": "push",
-        "value": {
-            "type": "integer",
-            "value": 0
+        "opr": "invoke",
+        "access": "special",
+        "method": {
+            "is_interface": False,
+            "ref": {
+                "kind": "class",
+                "name": "java/lang/Object"
+            },
+            "name": "<init>",
+            "args": [],
+            "returns": None
         }
     },
     {
-        "offset": 2,
-        "opr": "array_load",
-        "type": "int"
-    },
-    {
-        "offset": 3,
+        "offset": 4,
         "opr": "return",
-        "type": "int"
+        "type": None
     }
-
 ]
+
 
 # Create and run the static interpreter
 static_interpreter = JavaStaticInterpreter()

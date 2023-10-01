@@ -39,6 +39,13 @@ class JavaStaticInterpreter:
             elif opr == 'if' and instruction['condition'] == 'gt':
                 target = instruction['target']
                 print(f'Offset {offset}: Branching condition (greater than). Target offset: {target}')
+            elif opr == 'invoke':
+                if self.loaded_ref:
+                    print(f'Offset {offset}: Method invocation using a loaded reference.')
+                    self.loaded_ref = False
+                else:
+                    print(
+                        f'Offset {offset}: Potential NullPointerException: Method invocation without a loaded reference.')
 
         # Check for potential IndexOutOfBoundsException
         if self.array_length is not None and self.index is not None:

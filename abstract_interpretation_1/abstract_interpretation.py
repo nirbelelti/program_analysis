@@ -50,7 +50,7 @@ bytecode = [
 
 # Inputs for the division
 a = 10
-b = 5  # Set to 0 to trigger ArithmeticException
+b = 2  # Set to 0 to trigger ArithmeticException
 
 # Create and run the interpreter
 interpreter = JavaInterpreter()

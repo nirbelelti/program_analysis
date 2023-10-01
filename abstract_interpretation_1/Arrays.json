@@ -1,0 +1,98 @@
+[
+  {
+    "offset": 0,
+    "opr": "push",
+    "value": {
+      "type": "integer",
+      "value": 10
+    }
+  },
+  {
+    "offset": 2,
+    "opr": "newarray",
+    "dim": 1,
+    "type": "int"
+  },
+  {
+    "offset": 4,
+    "opr": "store",
+    "type": "ref",
+    "index": 0
+  },
+  {
+    "offset": 5,
+    "opr": "push",
+    "value": {
+      "type": "integer",
+      "value": 0
+    }
+  },
+  {
+    "offset": 6,
+    "opr": "store",
+    "type": "int",
+    "index": 1
+  },
+  {
+    "offset": 7,
+    "opr": "load",
+    "type": "int",
+    "index": 1
+  },
+  {
+    "offset": 8,
+    "opr": "load",
+    "type": "ref",
+    "index": 0
+  },
+  {
+    "offset": 9,
+    "opr": "arraylength"
+  },
+  {
+    "offset": 10,
+    "opr": "if",
+    "condition": "gt",
+    "target": 15
+  },
+  {
+    "offset": 13,
+    "opr": "load",
+    "type": "ref",
+    "index": 0
+  },
+  {
+    "offset": 14,
+    "opr": "load",
+    "type": "int",
+    "index": 1
+  },
+  {
+    "offset": 15,
+    "opr": "load",
+    "type": "int",
+    "index": 1
+  },
+  {
+    "offset": 16,
+    "opr": "array_store",
+    "type": "int"
+  },
+  {
+    "offset": 17,
+    "opr": "incr",
+    "index": 1,
+    "amount": 1
+  },
+  {
+    "offset": 20,
+    "opr": "goto",
+    "target": 5
+  },
+  {
+    "offset": 23,
+    "opr": "return",
+    "type": null
+  }
+]
+
